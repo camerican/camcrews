@@ -1,0 +1,70 @@
+<html>
+<head><title>Box Model Demo</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('input').on('change', function(){
+    $('#model').css($(this).attr('name'),$(this).attr('value')+"em");
+  });
+});
+</script>
+<style>
+body {
+  background: url('img/nycda-bg.svg') rgba(193,250,250,0.5);
+  font-size:20px;
+  font-family: "Arvo", serif;
+}
+section {
+  background-color: lightblue;
+}
+div#model {
+  display: inline-block;
+  border: 2em black solid;
+  margin: 2em;
+  padding: 2em;
+  background-color: red;
+}
+div#model div{
+  background-color: green;
+}
+#settings {
+  border: 2px dashed grey;
+  float:right;
+  padding: .25em;
+  background-color: #CCCCCC;
+}
+#settings .title {
+  width:4em;
+  display:inline-block;
+}
+#settings input {
+  width:3em;
+}
+ul#key li:nth-child(1) { color: lightblue; }
+ul#key li:nth-child(2) { color: black; }
+ul#key li:nth-child(3) { color: red; }
+ul#key li:nth-child(4) { color: green; }
+</style>
+</head>
+<body>
+<h1>Box Model Example</h1>
+<h3>Key</h3>
+<div id="settings" class="right">
+  <form>
+    <span class="title">Margin</span><input type="text" name="margin" value="2">em<br />
+    <span class="title">Border</span><input type="text" name="border-width" value="2">em<br />
+    <span class="title">Padding</span><input type="text" name="padding" value="2">em
+  </form>
+</div>
+<ul id="key">
+  <li>Blue - Outer Section Container (shows margin)</li>
+  <li>Black - Border</li>
+  <li>Red - Inner #model (shows padding)</li>
+  <li>Green - Shows inner div content</li>
+</ul>
+
+<section>
+  <div id="model"><div><b>#model</b><hr /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper elit nec ligula vestibulum mollis. Vestibulum vitae efficitur ipsum, nec efficitur tellus. Vestibulum malesuada volutpat massa, sed imperdiet elit venenatis ac. Curabitur volutpat sit amet quam non rhoncus. Nulla ornare rhoncus tortor, et blandit mauris blandit vel. Phasellus in libero in nisi tincidunt varius. Maecenas nunc arcu, tristique quis orci vitae, ultrices porttitor quam. Praesent luctus, sapien at sagittis bibendum, urna arcu feugiat libero, et consectetur diam nibh ac leo. Quisque lobortis nisl sed magna elementum, quis lobortis nunc tincidunt. Quisque tempus at augue a semper. Ut dictum facilisis lectus, sed blandit nisl iaculis porta. Curabitur sit amet nunc lectus. Quisque a quam eu est tincidunt laoreet. Morbi rutrum vel ligula ut posuere. Cras vel volutpat ex. Nulla sit amet pellentesque ex.</div></div>
+</section>
+</body>
+</html>
